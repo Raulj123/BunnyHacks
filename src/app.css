@@ -1,0 +1,105 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.egg {
+	width: 70px;
+	height: 100px;
+	margin: 1em auto;
+	border-radius: 50%/60% 60% 40% 40%;
+	overflow: hidden;
+	display: inline-block;
+}
+
+.eggG {
+	width: 35px;
+	height: 50px;
+
+	border-radius: 50%/60% 60% 40% 40%;
+
+	display: inline-block;
+}
+
+.egg-right {
+	transform: rotate(35deg);
+	animation: egg-right-animation 0.7s linear 0s infinite alternate;
+	background-color: #228b22;
+}
+.E {
+	color: #c8a2c8;
+}
+.bunny {
+	width: 70px;
+	height: 50px;
+}
+.foot {
+	height: 170px;
+	width: 100%;
+}
+
+.egg-left {
+	transform: rotate(-35deg);
+	animation: egg-left-animation 0.7s linear 0s infinite alternate;
+	background-color: #ec407a;
+}
+
+.egg-gold {
+	transform: rotate(-35deg);
+	animation: egg-left-animation 0.7s linear 0s infinite alternate;
+	background-color: gold;
+}
+
+.btn {
+	width: 100%;
+}
+
+.wrapper {
+	width: 550px;
+	max-width: 80%;
+	position: relative;
+}
+.wrapper input {
+	color: #291334;
+	width: 100%;
+	background-color: #cbbbbb;
+	height: 40px;
+	padding: 10px;
+	box-sizing: border-box;
+	border-radius: 8px;
+	border: none;
+	padding-right: 90px;
+}
+
+.wrapper button {
+	position: absolute;
+	right: 0;
+	top: 10%;
+	color: #291334;
+	background-color: #c8a2c8;
+	height: 80%;
+	width: 60px;
+	border-radius: 8px;
+	margin-right: 4px;
+}
+
+@keyframes egg-right-animation {
+	0% {
+		transform: rotate(10deg);
+	}
+	100% {
+		transform: rotate(45deg);
+	}
+}
+
+@keyframes egg-left-animation {
+	0% {
+		transform: rotate(-10deg);
+	}
+	100% {
+		transform: rotate(-45deg);
+	}
+}
+
+@media only screen and (min-width: 480px) {
+}
