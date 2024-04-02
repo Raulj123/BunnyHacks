@@ -1,33 +1,33 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import type { PageData } from './$types';
-	import { redirect } from '@sveltejs/kit';
+	import { goldenEgg1 } from '$lib/manager';
 
 	console.log(
 		"\r\n    .-''-.     ____       .-'''-. ,---------.    .-''-.  .-------.                .-''-.    .-_'''-.     .-_'''-.           .---.  .---.   ___    _ ,---.   .--.,---------. .---.         \r\n  .'_ _   \\  .'  __ `.   / _     \\\\          \\ .'_ _   \\ |  _ _   \\             .'_ _   \\  '_( )_   \\   '_( )_   \\          |   |  |_ _| .'   |  | ||    \\  |  |\\          \\\\   /         \r\n / ( ` )   '/   '  \\  \\ (`' )/`--' `--.  ,---'/ ( ` )   '| ( ' )  |            / ( ` )   '|(_ o _)|  ' |(_ o _)|  '         |   |  ( ' ) |   .'  | ||  ,  \\ |  | `--.  ,---'|   |         \r\n. (_ o _)  ||___|  /  |(_ o _).       |   \\  . (_ o _)  ||(_ o _) /           . (_ o _)  |. (_,_)/___| . (_,_)/___|         |   '-(_{;}_).'  '_  | ||  |\\_ \\|  |    |   \\    \\ /          \r\n|  (_,_)___|   _.-`   | (_,_). '.     :_ _:  |  (_,_)___|| (_,_).' __         |  (_,_)___||  |  .-----.|  |  .-----.        |      (_,_) '   ( \\.-.||  _( )_\\  |    :_ _:     v           \r\n'  \\   .---..'   _    |.---.  \\  :    (_I_)  '  \\   .---.|  |\\ \\  |  |        '  \\   .---.'  \\  '-   .''  \\  '-   .'        | _ _--.   | ' (`. _` /|| (_ o _)  |    (_I_)    _ _          \r\n \\  `-'    /|  _( )_  |\\    `-'  |   (_(=)_)  \\  `-'    /|  | \\ `'   /         \\  `-'    / \\  `-'`   |  \\  `-'`   |         |( ' ) |   | | (_ (_) _)|  (_,_)\\  |   (_(=)_)  (_I_)         \r\n  \\       / \\ (_ o _) / \\       /     (_I_)    \\       / |  |  \\    /           \\       /   \\        /   \\        /         (_{;}_)|   |  \\ /  . \\ /|  |    |  |    (_I_)  (_(=)_)        \r\n   `'-..-'   '.(_,_).'   `-...-'      '---'     `'-..-'  ''-'   `'-'             `'-..-'     `'-...-'     `'-...-'          '(_,_) '---'   ``-'`-'' '--'    '--'    '---'   (_I_)         \r\n                                                                                                                                                                                          \r\n"
 	);
 	console.log(
-		'Your goal is to find the %chidden messages %cand solve them!',
-		'color: yellow',
+		'Your goal is to find the hidden %cgolden eggs %cyou do so by solving challenges!',
+		'color: gold',
 		'color: initial'
 	);
 	console.log(
 		"Hint: Look for a hidden %c<p> %ctag with class '%chidden%c' in the DOM.",
-		'color: red',
+		'color: lightskyblue',
 		'color: inherit',
-		'color: blue',
+		'color: orange',
 		'color: inherit'
 	);
 
 	export let data: PageData;
 	let secret: any = null;
+	let uniqueId = 'Egg1';
 
 	onMount(async () => {
 		({ secret } = data);
 	});
 	let secretCode = '';
 	function egg1() {
-		console.log(secretCode);
 		if (secretCode == secret) {
 			showModal2();
 		} else {
@@ -46,6 +46,7 @@
 	}
 
 	function collect() {
+		goldenEgg1.set('true');
 		window.location.href = 'egg2';
 	}
 </script>
