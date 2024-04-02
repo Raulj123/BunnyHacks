@@ -99,5 +99,23 @@
 	}
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (max-width: 480px) {
+    .egg {
+        width: 45px;
+		height: 70px;
+		margin: 10px;
+		margin-bottom: 10px;
+    }
+	.hero- {
+		font-size: x-large;
+	}
+	.mobile {
+		display: flex;
+		justify-content: center;
+		text-align: center;
+	}
+	.modal-box {
+		width: 75vw;
+		
+	}
 }
