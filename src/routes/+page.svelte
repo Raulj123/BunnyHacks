@@ -44,7 +44,7 @@
 		let modal: any = document.getElementById('my_modal_2');
 		modal.showModal();
 	}
-
+	
 	function collect() {
 		goldenEgg1.set('true');
 		window.location.href = 'egg2';
