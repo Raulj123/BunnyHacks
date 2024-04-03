@@ -4,27 +4,29 @@
 	import { onMount } from 'svelte';
 	import { goldenEgg2 } from '$lib/manager';
 	import type { PageData } from './$types';
+	import Nav from '$lib/nav.svelte'
 
 	console.log(
-		'Go look at the %cresponse!',
+		'Go look at the %cresponse! You might want to water your eggs with the network tab open',
 		'color: gold',
 	);
 
 	export let data: PageData;
 	let secret: any = null;
 	let value: any;
+	let value2:any;
 	let loading = true;
-    let gridSize = { rows: 4, cols: 10 };
+    let gridSize = { rows: 4, cols: 5 };
 	let clue = "https://egghunt-rhome69.koyeb.app/egg2Hunt"
 	let secretCode:any;
 
 	onMount(async () => {
 		if (browser) {
 			value = localStorage.getItem('goldenEgg1');
+			value2 = localStorage.getItem('goldenEgg1');
 			loading = false;
 		}
 		({ secret } = data);
-		console.log(secret)
 	});
 
     function bunny(){
@@ -61,6 +63,8 @@
 	}
 
 </script>
+<Nav />
+
 <dialog id="my_modal_2" class="modal">
 	<div class="modal-box">
 		<div class="flex flex-row items-center">
@@ -81,6 +85,7 @@
     <p class="py-4">
         Your eggs have been watered! 🌧️ Go check the <span class="link-accent">networks tab</span> for a clue! 🕵️‍♂️
     </p>
+	<p>(You might want to water your eggs with the network tab open)</p>
     <div class="modal-action">
       <form method="dialog">
         <!-- if there is a button, it will close the modal -->
@@ -130,11 +135,15 @@
 		<div class="flex justify-center">
 			<ul class="steps">
 				<li class="step step-accent"><div class="eggG egg-gold mx-3"></div></li>
+				{#if value2 == 'true'}
+				<li class="step step-accent"><div class="eggG egg-gold mx-3"></div></li>
+				{:else}
 				<li class="step"></li>
+				{/if}
 				<li class="step"></li>
 			</ul>
 		</div>
-        <div class="text-center py-10">
+        <div class="text-center py-2">
             <div class="mx-auto">
                 <div class="flex flex-row items-start main justify-center">
                     <button on:click={bunny}>
@@ -159,9 +168,9 @@
             </div>
           </div>
       <div class="flex justify-center items-center">
-  <div class="items-center flex flex-row text-center justify-center flex-wrap">
+  <div class="items-center flex flex-row text-center justify-center flex-wrap" style="margin-bottom: 100px;">
     <div class="inline-block">
-      <button class="btn btn-primary" on:click={rain}>Water Eggs!</button>
+      <button class="btn btn-primary btt" on:click={rain}>Water Eggs!</button>
     </div>
 	<div class="wrapper mx-auto">
 		<input
@@ -175,7 +184,8 @@
   </div>
 
 </div>
-<section></section>
+
+
 
 	{:else}
 		<div role="alert" class="alert alert-error mx-auto w-80">
@@ -217,7 +227,6 @@
         background-color: #6a9846; 
     }
 	
-
 	
 	@media only screen and (max-width: 480px) {
 	.hero- {
@@ -231,7 +240,15 @@
 	.main {
 		flex-wrap: wrap;
 	}
-	
+	.btt {
+		margin-bottom: 10px;
+	}
+	.wrapper {
+	width: 100%;
+	}
 
+	.grid {
+		width: 100% !important;
+	}
 }
 </style>
