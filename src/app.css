@@ -56,7 +56,6 @@
 	width: 550px;
 	max-width: 80%;
 	position: relative;
-	z-index: -1;
 }
 .wrapper input {
 	color: #291334;

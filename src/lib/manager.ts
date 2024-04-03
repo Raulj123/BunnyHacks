@@ -11,6 +11,5 @@ goldenEgg2.subscribe((val) => browser && (localStorage.goldenEgg2 = val));
 export const goldenEgg3 = writable((browser && localStorage.getItem('goldenEgg3')) || 'false');
 goldenEgg3.subscribe((val) => browser && (localStorage.goldenEgg3 = val));
 
-
 export const bloom = writable((browser && localStorage.getItem('bloom')) || 'A4:2024');
 bloom.subscribe((val) => browser && (localStorage.bloom = val));
