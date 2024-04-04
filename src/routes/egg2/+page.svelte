@@ -188,7 +188,7 @@
 						class="input input-md input-bordered input-secondary pr-2"
 						placeholder="Secret code"
 					/>
-					<button type="submit" on:click={rain}>Submit</button>
+					<button type="submit" on:click={egg2}>Submit</button>
 				</div>
 			</div>
 			<div class="p-4">
