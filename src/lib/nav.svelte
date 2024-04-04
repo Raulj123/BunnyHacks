@@ -23,11 +23,9 @@
 <div class="btm-nav" style="z-index: 1;">
 	{#if value1 == 'true'}
 		<a href="./" class:active={route == '/'}>1</a>
-	{/if}
-	{#if value2 == 'true'}
 		<a href="./egg2" class:active={route == '/egg2'}>2</a>
 	{/if}
-	{#if value3 == 'true'}
+	{#if value2 == 'true'}
 		<a href="./egg3" class:active={route == '/egg3'}>3</a>
 	{/if}
 	{#if value3 == 'true' && value1 == 'true' && value2 == 'true'}
