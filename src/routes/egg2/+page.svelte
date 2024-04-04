@@ -137,7 +137,7 @@
 		</div>
 	</div>
 </dialog>
-<div class="bg-indigo-100 h-scren">
+<div class="bg-indigo-100 h-screen">
 {#if loading}
 	<div class="mx-auto flex justify-center py-10">
 		<p class="text-3xl">
@@ -223,11 +223,7 @@
 {/if}
 </div>
 <style>
-	.row img {
-		width: 50px;
-		height: 50px;
-		margin: 10px;
-	}
+	
 	.eggI {
 		width: 50px;
 		height: 100px;
@@ -237,13 +233,7 @@
 		height: 160px;
 	}
 
-	.gridE {
-		width: 55% !important;
-		border: 2px solid brown;
-		border-radius: 10px;
-		padding: 20px;
-		background-color: #6a9846;
-	}
+	
 
 	@media only screen and (max-width: 480px) {
 		.hero- {
@@ -254,12 +244,7 @@
 			justify-content: center;
 			text-align: center;
 		}
-		.main {
-			flex-wrap: wrap;
-		}
-		.btt {
-			margin-bottom: 10px;
-		}
+	
 		.wrapper {
 			width: 100%;
 		}
