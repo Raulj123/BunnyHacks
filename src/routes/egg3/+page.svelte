@@ -9,6 +9,7 @@
 	let value: any;
 	let value1: any;
 	let value2: any;
+	let value3: any;
 	let loading = true;
 	let secret: any = null;
 	let api1 = 'https://egghunt-rhome69.koyeb.app/egg3Hunt/lake_bee';
@@ -29,8 +30,9 @@
 		if (browser) {
 			value1 = localStorage.getItem('goldenEgg1');
 			value2 = localStorage.getItem('goldenEgg2');
+			value3 = localStorage.getItem('goldenEgg3');
 
-			if (value1 == 'true' && value2 == 'true') {
+			if (value1 == 'true') {
 				value = true;
 			}
 			loading = false;
@@ -172,8 +174,16 @@
 		<div class="flex justify-center">
 			<ul class="steps">
 				<li class="step step-accent"><div class="eggG egg-gold mx-3"></div></li>
-				<li class="step step-accent"><div class="eggG egg-gold mx-3"></div></li>
-				<li class="step"></li>
+				{#if value2 == 'true'}
+					<li class="step step-accent"><div class="eggG egg-gold mx-3"></div></li>
+				{:else}
+					<li class="step"></li>
+				{/if}
+				{#if value3 == 'true'}
+					<li class="step step-accent"><div class="eggG egg-gold mx-3"></div></li>
+				{:else}
+					<li class="step"></li>
+				{/if}
 			</ul>
 		</div>
 
@@ -187,7 +197,10 @@
 						<div class="chat-bubble chat-bubble-primary">Psssss! Click me</div>
 					</div>
 				</div>
-				<div class="wrapper mx-auto mt-5">
+				<div class="m-10 mx-auto" style="max-width:30%;">
+					<button class="link-accent mx-auto w-full" on:click={fetchAPI}>Fetch API 🐝</button>
+				</div>
+				<div class="wrapper mx-auto mt-10">
 					<input
 						bind:value={guess}
 						type="text"
@@ -206,13 +219,12 @@
 					</div>
 				</div>
 
-				<button class="link-accent mx-auto w-full" on:click={fetchAPI}>Fetch API 🐝</button>
-
 				<div
 					class="tooltip tooltip-bottom mx-auto mt-4 w-full"
+					style="margin-bottom: 100px;"
 					data-tip="JavaScript can run directly in your browser."
 				>
-					<p>Hint 1</p>
+					<p>Hint</p>
 				</div>
 			</div>
 		</div>

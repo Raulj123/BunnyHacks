@@ -13,8 +13,10 @@
 
 	export let data: PageData;
 	let secret: any = null;
+	let value1: any;
 	let value: any;
 	let value2: any;
+	let value3: any;
 	let loading = true;
 	let gridSize = { rows: 4, cols: 5 };
 	let clue = 'https://egghunt-rhome69.koyeb.app/egg2Hunt';
@@ -22,8 +24,13 @@
 
 	onMount(async () => {
 		if (browser) {
-			value = localStorage.getItem('goldenEgg1');
-			value2 = localStorage.getItem('goldenEgg1');
+			value1 = localStorage.getItem('goldenEgg1');
+			value2 = localStorage.getItem('goldenEgg2');
+			value3 = localStorage.getItem('goldenEgg3');
+
+			if (value1 == 'true') {
+				value = true;
+			}
 			loading = false;
 		}
 		({ secret } = data);
@@ -144,7 +151,7 @@
 		</a>
 	</div>
 
-	{#if value == 'true'}
+	{#if value == true}
 		<div class="flex justify-center">
 			<ul class="steps">
 				<li class="step step-accent"><div class="eggG egg-gold mx-3"></div></li>
@@ -153,10 +160,51 @@
 				{:else}
 					<li class="step"></li>
 				{/if}
-				<li class="step"></li>
+				{#if value3 == 'true'}
+					<li class="step step-accent"><div class="eggG egg-gold mx-3"></div></li>
+				{:else}
+					<li class="step"></li>
+				{/if}
 			</ul>
 		</div>
-		<div class="py-2 text-center">
+
+		<div class="mt-5 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2">
+			<div class="p-4">
+				<div class="flex flex-row">
+					<button on:click={bunny}>
+						<img src="./eggs/full_bunny.svg" alt="char" />
+					</button>
+					<div class="chat chat-start">
+						<div class="chat-bubble chat-bubble-primary">Psssss! Click me</div>
+					</div>
+				</div>
+				<div class="m-10 mx-auto" style="max-width: 30%;">
+					<button class="link-primary mx-auto w-full" on:click={rain}>Water Eggs!</button>
+				</div>
+				<div class="wrapper mx-auto mt-5">
+					<input
+						bind:value={secretCode}
+						type="text"
+						class="input input-md input-bordered input-secondary pr-2"
+						placeholder="Secret code"
+					/>
+					<button type="submit" on:click={rain}>Submit</button>
+				</div>
+			</div>
+			<div class="p-4">
+				<div class="mt-5 grid grid-cols-5 gap-4 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5">
+					{#each Array(gridSize.rows) as _, row}
+						{#each Array(gridSize.cols) as _, col}
+							<div class="p-4">
+								<img class="eggI" src="./eggs/egg.svg" alt="egg" />
+							</div>
+						{/each}
+					{/each}
+				</div>
+			</div>
+		</div>
+
+		<!-- <div class="py-2 text-center">
 			<div class="mx-auto">
 				<div class="main flex flex-row items-start justify-center">
 					<button on:click={bunny}>
@@ -166,7 +214,7 @@
 						<div class="chat-bubble chat-bubble-primary">Psssss! Click me</div>
 					</div>
 
-					<div class="m-10 grid max-w-full">
+					<div class="m-10 gridE max-w-full">
 						{#each Array(gridSize.rows) as _, row}
 							<div class="row flex w-full flex-wrap justify-between">
 								{#each Array(gridSize.cols) as _, col}
@@ -196,7 +244,7 @@
 					<button type="submit" on:click={egg2}>Submit</button>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	{:else}
 		<div role="alert" class="alert alert-error mx-auto w-80">
 			<svg
@@ -222,12 +270,16 @@
 		height: 50px;
 		margin: 10px;
 	}
+	.eggI {
+		width: 50px;
+		height: 100px;
+	}
 	img {
 		width: 120px;
 		height: 160px;
 	}
 
-	.grid {
+	.gridE {
 		width: 55% !important;
 		border: 2px solid brown;
 		border-radius: 10px;

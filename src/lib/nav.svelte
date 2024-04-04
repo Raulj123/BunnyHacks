@@ -20,7 +20,7 @@
 	});
 </script>
 
-<div class="btm-nav">
+<div class="btm-nav" style="z-index: 1;">
 	{#if value1 == 'true'}
 		<a href="./" class:active={route == '/'}>1</a>
 	{/if}
@@ -29,5 +29,8 @@
 	{/if}
 	{#if value3 == 'true'}
 		<a href="./egg3" class:active={route == '/egg3'}>3</a>
+	{/if}
+	{#if value3 == 'true' && value1 == 'true' && value2 == 'true'}
+		<a href="./end" class:active={route == '/end'}>🎉</a>
 	{/if}
 </div>

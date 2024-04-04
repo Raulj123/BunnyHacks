@@ -111,6 +111,11 @@
 		</div>
 	</div>
 </div>
+<img
+	style="position: absolute; bottom: 0; width: 100%; height: 200px;"
+	src="./eggs/grass.png"
+	alt="grass"
+/>
 
 <style>
 	::placeholder {
