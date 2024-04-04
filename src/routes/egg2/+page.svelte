@@ -137,7 +137,7 @@
 		</div>
 	</div>
 </dialog>
-
+<div class="bg-indigo-100 h-scren">
 {#if loading}
 	<div class="mx-auto flex justify-center py-10">
 		<p class="text-3xl">
@@ -195,7 +195,7 @@
 				<div class="mt-5 grid grid-cols-5 gap-4 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5">
 					{#each Array(gridSize.rows) as _, row}
 						{#each Array(gridSize.cols) as _, col}
-							<div class="p-4">
+							<div class="p-3">
 								<img class="eggI" src="./eggs/egg.svg" alt="egg" />
 							</div>
 						{/each}
@@ -203,48 +203,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- <div class="py-2 text-center">
-			<div class="mx-auto">
-				<div class="main flex flex-row items-start justify-center">
-					<button on:click={bunny}>
-						<img src="./eggs/full_bunny.svg" alt="char" />
-					</button>
-					<div class="chat chat-start">
-						<div class="chat-bubble chat-bubble-primary">Psssss! Click me</div>
-					</div>
-
-					<div class="m-10 gridE max-w-full">
-						{#each Array(gridSize.rows) as _, row}
-							<div class="row flex w-full flex-wrap justify-between">
-								{#each Array(gridSize.cols) as _, col}
-									<img src="./eggs/egg.svg" alt="egg" />
-								{/each}
-							</div>
-						{/each}
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="flex items-center justify-center">
-			<div
-				class="flex flex-row flex-wrap items-center justify-center text-center"
-				style="margin-bottom: 100px;"
-			>
-				<div class="inline-block">
-					<button class="btt btn btn-primary" on:click={rain}>Water Eggs!</button>
-				</div>
-				<div class="wrapper mx-auto">
-					<input
-						bind:value={secretCode}
-						type="text"
-						class="input input-md input-bordered input-secondary pr-2"
-						placeholder="Secret Code"
-					/>
-					<button type="submit" on:click={egg2}>Submit</button>
-				</div>
-			</div>
-		</div> -->
 	{:else}
 		<div role="alert" class="alert alert-error mx-auto w-80">
 			<svg
@@ -263,7 +221,7 @@
 		</div>
 	{/if}
 {/if}
-
+</div>
 <style>
 	.row img {
 		width: 50px;

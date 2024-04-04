@@ -156,7 +156,7 @@
 		</div>
 	</div>
 </dialog>
-
+<div class="bg-indigo-100 h-screen">
 {#if loading}
 	<div class="mx-auto flex justify-center py-10">
 		<p class="text-3xl">
@@ -246,7 +246,7 @@
 		</div>
 	{/if}
 {/if}
-
+</div>
 <style>
 	img {
 		width: 120px;
