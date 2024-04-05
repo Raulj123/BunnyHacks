@@ -43,7 +43,7 @@
 				<div class="egg egg-right"></div>
 			</div>
 			<h2 class="text-3xl">
-				🎉 Congratulations! You've found all three <span class="link-accent">golden eggs</span>! 🎉
+				🎉 Congratulations! You've found all three <span class="link-accent">golden eggs </span>! 🎉
 			</h2>
 			<div class="mt-10">
 				<a href="https://github.com/Raulj123/BunnyHacks" class="link link-accent">Source code</a>

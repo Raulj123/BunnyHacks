@@ -210,7 +210,7 @@
 					<button type="submit" on:click={check}>Submit</button>
 				</div>
 			</div>
-			<div class="p-4">
+			<div class="p-4 bg-indigo-100">
 				<div class="relative p-4">
 					<div class="water">
 						<div class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform">

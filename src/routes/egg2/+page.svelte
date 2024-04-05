@@ -191,8 +191,8 @@
 					<button type="submit" on:click={egg2}>Submit</button>
 				</div>
 			</div>
-			<div class="p-4">
-				<div class="mt-5 grid grid-cols-5 gap-4 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5">
+			<div class="p-4 bg-indigo-100">
+				<div class="mt-5 grid grid-cols-5 gap-1 md:grid-cols-5 lg:grid-cols-5 xl:grid-cols-5">
 					{#each Array(gridSize.rows) as _, row}
 						{#each Array(gridSize.cols) as _, col}
 							<div class="p-3">
@@ -226,7 +226,7 @@
 	
 	.eggI {
 		width: 50px;
-		height: 100px;
+		height: 40px;
 	}
 	img {
 		width: 120px;
