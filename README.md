@@ -11,6 +11,4 @@
 
 <br>
 
-
 Built with SvelteKit, DasiyUI and FastAPI for custom endpoints
-
