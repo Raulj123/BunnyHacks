@@ -12,3 +12,10 @@
 <br>
 
 Built with SvelteKit, DasiyUI and FastAPI for custom endpoints
+
+
+> [!IMPORTANT]  
+> The api is down and I might redeploy in the future so in the meantime use [BunnyHacks-API](https://github.com/Raulj123/BunnyHacks-API) to look for hints ;)
+
+> [!NOTE]  
+> This won 1st place at a mini hackathon at my school 😎
