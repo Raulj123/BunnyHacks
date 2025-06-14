@@ -13,7 +13,7 @@
 	let loading = true;
 	let secret: any = null;
 	let api1 = 'https://egghunt-rhome69.koyeb.app/egg3Hunt/lake_bee';
-	const apiUrl = `https://egghunt-rhome69.koyeb.app/egg3Hunt/lake_bee`;
+	const apiUrl = 'figure out the url honey';
 	let dataAPI: any;
 	let msg: any;
 	export let data: PageData;
@@ -47,9 +47,9 @@
 	}
 
 	async function fetchAPI() {
-		const res = await fetch(api1);
+		const res = await fetch('/egg3/lake_bee');
 		dataAPI = await res.json();
-		msg = dataAPI.message;
+		msg = dataAPI;
 		let modal: any = document.getElementById('my_modal_2');
 		modal.showModal();
 	}

@@ -19,7 +19,6 @@
 	let value3: any;
 	let loading = true;
 	let gridSize = { rows: 4, cols: 5 };
-	let clue = 'https://egghunt-rhome69.koyeb.app/egg2Hunt';
 	let secretCode: any;
 
 	onMount(async () => {
@@ -42,8 +41,9 @@
 	}
 
 	async function rain() {
-		const res = await fetch(clue);
+		const res = await fetch('/egg2');
 		const secret = await res.json();
+		console.log(secret);
 		let modal: any = document.getElementById('my_modal_5');
 		modal.showModal();
 	}
